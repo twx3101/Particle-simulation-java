@@ -1,12 +1,15 @@
 package utils;
 
 public class MinPriorityQueue<T extends Comparable<T>> {
-    
+
     /**
      * Creates an empty queue.
      */
+    private int array_size;
+
     public MinPriorityQueue() {
         // TODO implement the constructor
+        l = new List();
     }
 
     /**
@@ -14,9 +17,10 @@ public class MinPriorityQueue<T extends Comparable<T>> {
      */
     public int size() {
         // TODO implement this method
-        return 0;
+        int size = l.size();
+        return size;
     }
-    
+
     /**
      * Adds elem to the queue.
      */
@@ -37,7 +41,10 @@ public class MinPriorityQueue<T extends Comparable<T>> {
      */
     public boolean isEmpty() {
         // TODO implement this method
-        return false;
+        if (l.size() == 0){
+          return false;
+        }
+        return true;
     }
-    
+
 }
