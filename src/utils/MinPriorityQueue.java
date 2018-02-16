@@ -38,7 +38,7 @@ public class MinPriorityQueue<T extends Comparable<T>> {
     		array_size = array_size*2;
     	}
     	if(stack_pointer < array_size) {
-    		array.add(elem);
+    		array.add(stack_pointer,elem);
     		stack_pointer++;
     	}
     	

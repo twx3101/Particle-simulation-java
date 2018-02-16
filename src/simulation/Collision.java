@@ -5,8 +5,19 @@ public abstract class Collision extends AbstractEvent{
     /**
      * Constructor for Collision
      */
+	private Particle[] p;
+	private int[] col;
+	
     public Collision(double t, Particle[] ps) {
         // TODO implement constructor
+    	super(t);
+    	this.p = ps;
+    	col = new int[p.length];
+    	for(int i = 0; i < p.length; i++) {
+    		Particle a = p[i];
+    		col[i] = a.collisions();
+    	}
+   
     }
 
     /**
@@ -15,7 +26,14 @@ public abstract class Collision extends AbstractEvent{
     @Override
     public boolean isValid() {
         // TODO implement his method
-        return false;
+    	for(int i = 0; i < p.length; i++) {
+    		Particle a = p[i];
+    		if(a.collisions() != col[i]) {
+    			return false;
+    		}
+ 
+    	}
+        return true;
     }
 
     /**
@@ -23,6 +41,6 @@ public abstract class Collision extends AbstractEvent{
      */
     public Particle[] getParticles() {
         // TODO implement this method
-        return null;
+        return p;
     }
 }
