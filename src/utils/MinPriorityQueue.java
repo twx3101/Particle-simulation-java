@@ -25,7 +25,7 @@ public class MinPriorityQueue<T extends Comparable<T>> {
      */
     public int size() {
         // TODO implement this method
-        return array_size;
+        return stack_pointer-1;
     }
 
     /**
